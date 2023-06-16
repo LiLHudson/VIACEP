@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Cadastre seu endereço</h2>
+            <span id="message"></span>
+            <form action="">
+                <div class="halfBox spacing">
+                    <label for="cep" class="input">CEP</label>
+                    <input type="text" id="cep" placeholder="Digite seu Cep" data-min-length="8" data-max-lenght="8" class="cep">
+                </div>
+                <div class="halfBox">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" placeholder="Digite seu estado" class="estado">
+                </div>
+                <div class="fullBox">
+                    <label for="address">Endereço</label>
+                    <input type="text" id="address" placeholder="Digite seu endereço" class="address">
+                </div>
+                <div class="halfBox spacing">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" placeholder="Digite o complemento">
+                </div>
+                <div class="halfBox">
+                    <label for="numero">Numero</label>
+                    <input type="text" id="numero" placeholder="Digite seu numero" class="numero">
+                </div>
+                <div class="fullBox">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" placeholder="Digite seu Bairro" class="bairro">
+                </div>
+                <div class="fullBox">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" placeholder="Digite sua Cidade" class="cidade">
+                </div>
+                <div class="fullBox">
+                    <input type="submit" id="btn-submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </div>
+    <p class="errorValidation template"></p>
+    <script src="viacep.js"></script>
+</body>
+</html>
