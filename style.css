@@ -1,0 +1,16 @@
+body {
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.box {
+    width: 300px;
+    margin: 0 auto;
+    background-color: rgb(233, 233, 233);
+    padding: 0px 15px 10px 8px;
+}
+
+.box .input{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
