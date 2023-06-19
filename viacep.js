@@ -9,25 +9,25 @@ const message = document.querySelector('#message');
 cep.addEventListener('focusout', async() => {
 
         try {
-            const onlyNumbers = /^[0-9]+$/;
-        const cepValid = /^[0-9]{8}$/;
+            const cepValid = /^[0-9]{5}[\d]{3}$/
+	    teste = cep.value.replace("-","");
+            cep.value = teste;
 
-        if (!onlyNumbers.test(cep.value) || !cepValid.test(cep.value)) {
+        if (!cepValid.test(cep.value)) {
             throw { cep_error: 'Cep Invalido'};
             }
-            cep.value.replace('-','');
-            teste = cep.value.replace('-','');
             const response = await fetch(`https://viacep.com.br/ws/${teste}/json/`);
             if(!response.ok){
                 throw await response.json();
             }
-
+	    
             const responseCep = await response.json();
-
+		
             address.value = responseCep.logradouro;
             bairro.value = responseCep.bairro;
             cidade.value = responseCep.localidade;
-            estado.value = responseCep.uf;  
+            estado.value = responseCep.uf;	
+
 
         } catch (error) {
             if(error?.cep_error){
