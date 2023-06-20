@@ -5,16 +5,32 @@ const cidade = document.querySelector('#cidade');
 const estado = document.querySelector('#estado');
 const numero = document.querySelector('#numero');
 const message = document.querySelector('#message');
-const cepLenght = document.querySelector('tamanho');
-
 
 cep.addEventListener('focusout',async() => {
-        try {
-            const cepValid = /^[0-9]{5}-[\d]{3}$/
+        try{
+	    
+	    const cepValid = /^[0-9]{5}-[\d]{3}$/;
+	    const cepValid1 = /^[0-9]{5}[\d]{3}$/;
+	    const cepValid2 = /^$/;
+	
+	if(cepValid2.test(cep.value)){
+		address.value = "";
+		bairro.value = "";
+		cidade.value = "";
+		estado.value = "";
+		numero.value = "";
+		message.value = "";
 
-        if (!cepValid.test(cep.value)) {
-            throw { cep_error: 'Cep Invalido'};
-            }
+       }if (!cepValid.test(cep.value)) {
+		if(!cepValid1.test(cep.value)){
+		
+	}	
+	  throw { cep_error: 'Cep Invalido'};				
+            	
+        }
+
+	
+		
             const response = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`);
             if(!response.ok){
                 throw await response.json();
@@ -25,6 +41,8 @@ cep.addEventListener('focusout',async() => {
                 throw{cep_error: 'Cep Invalido'};
             }
             
+	    console.log(responseCep);
+
             address.value = responseCep.logradouro;
             bairro.value = responseCep.bairro;
             cidade.value = responseCep.localidade;
@@ -41,9 +59,15 @@ cep.addEventListener('focusout',async() => {
         }    
         
 })
-function limparForm(){
-    document.querySelector('#address').value = "";
-    document.querySelector('#cidade').value = "";
-    document.querySelector('#bairro').value = "";
-    document.querySelector('#estado').value = "";
+ const handleZipCode = (event) => {
+	let cep = event.target
+	cep.value = zipCodeMask(cep.value)
 }
+	const zipCodeMask = (value) =>{
+	if(!value) return "";
+	value = value.replace(/\DZ/g,'');
+	value = value.replace(/(\d{5})(\d)/, '$1-$2');
+	return value
+}
+
+	

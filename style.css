@@ -19,11 +19,14 @@ input:focus, label:focus{
 }
 
 body{
-    background: rgb(2,0,36);
+    padding-top: 9px;
     background-image: linear-gradient(
-        90deg,
-        rgba(2,0,36,1) 0%, rgba(62,9,121,1) 0%, rgba(191,4,4,1)50%, rgba(255,143,0,1)100%);
-    background-size: 200wh;
+        45deg,
+        #2892D7,
+        #6DAEDB,
+        #173753
+	);
+    background-size: 100%;
     height: 100vh;
     background-repeat:no-repeat;
 }
@@ -32,7 +35,8 @@ body{
 /* Formulario */
 
 .container{
-    width: 550px;
+    width: 500px;
+    height: 600px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
@@ -64,13 +68,14 @@ form{
 
 label{
     font-weight: bold;
-    font-size: 1.3rem;	       
+    font-size: 1.3rem; 
+    padding-top: 10px;       
 }
 
 input{
     font-family: 'Segoe UI',sans-serif;
     border-bottom: 2px solid #323232;
-    padding: 10px;
+    padding: 15px;
     font-size: 1.2rem;
     margin-bottom: 10px;
     height: 40px;
@@ -92,4 +97,8 @@ input[type="submit"]{
     border-radius: 15px;
     height: 45px;
     cursor: pointer;
+    padding-top: 12px;
+}
+.button{
+    margin-top:15px;
 }
