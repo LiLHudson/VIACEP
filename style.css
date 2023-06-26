@@ -11,7 +11,7 @@
 input,label{
     display: block;
     width: 100%;
-    height: 35px;
+    height: 33px;
 }
 
 input:focus, label:focus{
@@ -19,7 +19,7 @@ input:focus, label:focus{
 }
 
 body{
-    padding-top: 9px;
+    padding-top: 7px;
     background-image: linear-gradient(
         45deg,
         #2892D7,
@@ -36,12 +36,12 @@ body{
 
 .container{
     width: 500px;
-    height: 600px;
+    height: 605px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
     border-radius: 10px;
-    padding: 25px;
+    padding: 20px;
 }
 
 h2{
@@ -69,7 +69,8 @@ form{
 label{
     font-weight: bold;
     font-size: 1.3rem; 
-    padding-top: 10px;       
+    padding-top: 10px;
+    padding: 10px;       
 }
 
 input{
@@ -78,12 +79,12 @@ input{
     padding: 15px;
     font-size: 1.2rem;
     margin-bottom: 10px;
-    height: 40px;
+    height: 45px;
     font-weight: bold;
 }
 
 .spacing{
-    margin-right: 2.5%;
+    margin-right: 3%;
 }
 
 input:focus{

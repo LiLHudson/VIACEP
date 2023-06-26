@@ -11,22 +11,18 @@ cep.addEventListener('focusout',async() => {
 	    
 	    const cepValid = /^[0-9]{5}-[\d]{3}$/;
 	    const cepValid1 = /^[0-9]{5}[\d]{3}$/;
-	    const cepValid2 = /^$/;
 	
-	if(cepValid2.test(cep.value)){
-		address.value = "";
-		bairro.value = "";
+	if (!cepValid.test(cep.value)) {
+		if(!cepValid1.test(cep.value)){
+	}		
+          	address.value = "";
+		bairro.value = "";	
 		cidade.value = "";
 		estado.value = "";
 		numero.value = "";
 		message.value = "";
-
-       }if (!cepValid.test(cep.value)) {
-		if(!cepValid1.test(cep.value)){
-		
-	}	
-	  throw { cep_error: 'Cep Invalido'};				
-            	
+		complemento.value = "";
+		throw { cep_error: 'Cep Invalido'};	
         }
 
 	
@@ -38,6 +34,13 @@ cep.addEventListener('focusout',async() => {
 	    
             const responseCep = await response.json();
             if(responseCep.erro){
+		address.value = "";
+		bairro.value = "";	
+		cidade.value = "";
+		estado.value = "";
+		numero.value = "";
+		message.value = "";
+		complemento.value = "";
                 throw{cep_error: 'Cep Invalido'};
             }
             
